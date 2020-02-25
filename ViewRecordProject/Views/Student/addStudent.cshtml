@@ -1,0 +1,44 @@
+﻿
+@model ViewRecordProject.Models.Students
+
+
+
+
+<div class="container">
+
+    <form asp-action="addStudent" asp-controller="Student" method="post">
+        <div class="form-group">
+            <label asp-for="Id"></label>
+            <input asp-for="Id" placeholder="Student ID goes here" /><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" placeholder="Student name goes here" /><br />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Address"></label>
+            <input asp-for="Address" placeholder="Student Address goes here" /><br />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Contect"></label>
+            <input asp-for="Contect" placeholder="Student Contact goes here" /><br />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Class"></label>
+            <input asp-for="Class" placeholder="Student Class goes here" /><br />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Roll"></label>
+            <input asp-for="Roll" placeholder="Student Roll goes here" /><br />
+        </div>
+
+
+        <input type="submit" />
+    </form>
+</div>
+
+

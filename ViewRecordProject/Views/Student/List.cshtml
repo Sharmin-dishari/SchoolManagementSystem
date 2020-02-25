@@ -1,0 +1,63 @@
+﻿@*@model ViewRecordProject.Models.Students;
+
+    @Model.Id  <br/>
+    @Model.Name*@
+
+
+@model List<ViewRecordProject.Models.Students>;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<br/>
+<br />
+
+<div class="container">
+    <input id="myInput" type="text" placeholder="Search...">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Class</th>
+                <th>Roll</th>
+                <th>monthlyFee</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+
+            @foreach (var x in Model)
+            {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                <td>@x.Address</td>
+                
+                <td>@x.Class</td>
+                <td>@x.Roll</td>
+                <td>@x.Fee</td>
+                <td>
+                    <a href='@Url.Action("deleteStudent", "Student", new { id = x.Id})'>
+                        <input type="submit" value='Delete' />
+                    </a>
+                </td>
+
+               
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Student/addStudent">
+        <input type='button' value='Add Student' />
+    </a>
+    
+</div>

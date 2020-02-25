@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "addLoginAccesser";
+}
+
+<h2>addLoginAccesser</h2>
+
+@model ViewRecordProject.Models.Login
+
+
+
+
+<div class="container">
+
+    <form asp-action="addLoginAccesser" asp-controller="Home">
+        <div class="form-group">
+            <label asp-for="id"></label>
+            <input asp-for="id" placeholder="Your ID goes here" /><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="username"></label>
+            <input asp-for="username" placeholder="Your name goes here" /><br />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="password"></label>
+            <input asp-for="password" placeholder="Your password goes here" /><br />
+        </div>
+        
+        <input type="submit" />
+    </form>
+</div>
+
+

@@ -1,0 +1,42 @@
+﻿<br />
+<br />
+<br />
+<br />
+
+@*@model ViewRecordProject.Models.Students;
+
+    @Model.Id  <br/>
+    @Model.Name*@
+
+
+@model List<ViewRecordProject.Models.Login>;
+
+<br />
+<br />
+
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>user Name</th>
+                <th>user password</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.id</td>
+                    <td>@x.username</td>
+                    <td>@x.password</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Home/addLoginAccesser">
+        <input type='button' value='Add Admin' />
+    </a>
+</div>

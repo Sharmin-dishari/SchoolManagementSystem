@@ -1,0 +1,64 @@
+﻿@*@model ViewRecordProject.Models.Students;
+
+    @Model.Id  <br/>
+    @Model.Name*@
+
+
+@model List<ViewRecordProject.Models.PaymentViewModel>
+    ;
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    </script>
+    <br />
+    <br />
+
+    <div class="container">
+        <input id="myInput" type="text" placeholder="Search...">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Class Name</th>
+                    <th>Roll</th>
+                    <th>Fee</th>
+                    <th>Date Of paymant</th>
+                    @*<th>Options</th>*@
+                </tr>
+            </thead>
+            <tbody id="myTable">
+
+                @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.p_id</td>
+                    <td>@x.s_name</td>
+                    <td>@x.c_name</td>
+
+                    <td>@x.roll</td>
+                    <td>@x.fee</td>
+                    <td>@x.dateOfPayment</td>
+                    @*<td>
+                        <a href=''>
+                            <input type="submit" value='Delete' />
+                        </a>
+                    </td>*@
+
+
+                </tr>
+            }
+            </tbody>
+        </table>
+        <a href="/Payment/paymentForm">
+            <input type='button' value='Add Payment' />
+        </a>
+
+    </div>
